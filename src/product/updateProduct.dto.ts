@@ -3,9 +3,9 @@ import { IsInt, IsString, IsNotEmpty, IsOptional } from 'class-validator';
 
 export class UpdateProductDTO {
   @IsNotEmpty()
-  @IsString()
+  @IsInt()
   @ApiProperty()
-  id: string;
+  id: number;
 
   @IsString()
   @IsOptional()

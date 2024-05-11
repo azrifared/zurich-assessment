@@ -23,10 +23,6 @@ export class AuthGuard implements CanActivate {
       const authToken = authorization.replace(/bearer/gim, '').trim();
       const resp = await this.authService.validateToken(authToken);
 
-      if (resp.role !== 'admin') {
-        throw new UnauthorizedException('User not authorized!');
-      }
-
       request.decodedData = resp;
       return true;
     } catch (error) {

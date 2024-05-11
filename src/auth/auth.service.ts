@@ -10,4 +10,8 @@ export class AuthService {
       secret: process.env.JWT_SECRET,
     });
   }
+
+  decodeToken(token: string) {
+    return this.jwtServ.decode(token);
+  }
 }
